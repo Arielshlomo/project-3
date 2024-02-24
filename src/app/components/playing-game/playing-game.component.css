@@ -1,0 +1,258 @@
+.start-game-component-container {
+  width: 70vw;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.start-game-instruction {
+  font-size: 35px;
+  text-align: center;
+  font-family: "Poor Story", system-ui;
+  font-weight: 900;
+  margin-bottom: 50px;
+  color: #fc6736;
+}
+
+.categories-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  padding-bottom: 50px;
+}
+
+.add-category-btn {
+  background-color: #0c2d57;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 16px;
+  padding: 14px 20px;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  transition-duration: 0.5s;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.see-translation-btn {
+    background-color: #fc6736;
+}
+
+.add-category-btn:hover {
+  background-color: #efecec;
+  color: grey;
+  transition-duration: 0.5s;
+}
+
+.card {
+  height: 200px;
+  width: 300px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.4s;
+  background-size: cover;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.card:hover .card_content,
+.card:hover .card_bottom_shadow {
+  bottom: 0;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card_content {
+  z-index: 2;
+  color: #fff;
+  font-family: "Poor Story", system-ui;
+  padding: 0px 20px 25px;
+  position: absolute;
+  bottom: -150px;
+  left: 0;
+  transition: all 0.25s;
+}
+
+.card_title {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.card_desc {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.card_bottom_shadow {
+  height: 150px;
+  width: 100%;
+  position: absolute;
+  bottom: -150px;
+  left: 0;
+  transition: all 0.1s;
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgba(252, 103, 54, 0.61),
+    #fc6736
+  );
+}
+
+.card-selected {
+  transform: scale(1.1) !important;
+}
+
+.card-selected .card_content,
+.card-selected .card_bottom_shadow {
+  bottom: 0;
+}
+
+.category-form {
+  width: 70vw;
+  max-width: 700px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.word-form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.form-field {
+  width: 48%;
+  height: 80px;
+}
+
+.word-field {
+  width: 75%;
+  height: 80px;
+}
+
+.scroll-container {
+  overflow: auto;
+  max-height: 270px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.add-word-btn {
+  background-color: #fc6736;
+  color: white;
+  border-radius: 20px;
+  font-size: 16px;
+  min-height: 40px;
+  padding: 14px 20px;
+  outline: none;
+  border: none;
+}
+
+.save-category-btn {
+  position: fixed;
+  bottom: 70px;
+  right: 50px;
+  background-color: #fc6736;
+  color: white;
+  border-radius: 20px;
+  font-size: 16px;
+  min-height: 40px;
+  padding: 14px 20px;
+  outline: none;
+  border: none;
+  transition-duration: 0.5s;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.save-category-btn:hover,
+.save-disabled {
+  background-color: #efecec;
+  color: grey;
+  transition-duration: 0.5s;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #efecec;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+
+input#categoryName,
+input#categoryImage {
+  background-color: transparent !important;
+  background: transparent;
+}
+
+.mat-btn {
+  color: #efecec;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  margin-top: 7px;
+}
+
+.mat-btn-check {
+  background-color: green;
+}
+
+.mat-btn-cross {
+  background-color: rgb(210, 30, 30);
+}
+
+.translate-word {
+  color: #0c2d57;
+  font-family: "Poor Story", system-ui;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.translation-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  width: 60%;
+}
+
+.game-score-instruction {
+  margin-top: 50px;
+  font-size: 17px;
+  color: #0c2d57;
+  text-align: center;
+  font-weight: 500;
+  font-style: oblique;
+}
+
+.retry-left {
+  font-size: 17px;
+  margin-top: 14px;
+  color: #0c2d57;
+  display: block;
+}

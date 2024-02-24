@@ -1,0 +1,72 @@
+<h1 class="page-route-title">
+  <span routerLink="/game-mode/start"><mat-icon>arrow_back</mat-icon></span> Try
+  to translate all words correctly !
+</h1>
+<div class="start-game-component-container">
+  <p class="start-game-instruction">
+    Translate - {{ categoriesObject.categoryName }}
+    <br />
+    <span class="retry-left">Retry Left : {{ retryLeft }}</span>
+  </p>
+  <div class="categories-container">
+    <form [formGroup]="translationForm" class="category-form">
+      <div formArrayName="words" class="word-form scroll-container mt-20">
+        <div
+          *ngFor="let wordGroup of words.controls; let i = index"
+          [formGroupName]="i"
+          class="word-form"
+        >
+          <div class="translate-word">
+            Origin:
+            <span style="color: #fc6736">{{
+              wordGroup?.get("sourceLanguage")?.value
+            }}</span>
+          </div>
+
+          <div class="translation-container">
+            <mat-form-field class="word-field">
+              <mat-label>Target</mat-label>
+              <input matInput type="text" formControlName="targetLanguage" />
+              <mat-error *ngIf="wordGroup.get('targetLanguage')?.invalid">
+                Target Translation is required
+              </mat-error>
+            </mat-form-field>
+
+            <button
+              class="mat-btn mat-btn-check"
+              *ngIf="wordGroup?.get('isCorrect')?.value"
+            >
+              <mat-icon>done_outline</mat-icon>
+            </button>
+            <button
+              class="mat-btn mat-btn-cross"
+              *ngIf="wordGroup?.get('isCorrect')?.value == false"
+            >
+              <mat-icon>clear</mat-icon>
+            </button>
+            <button
+              class="mat-btn"
+              *ngIf="wordGroup?.get('isCorrect')?.value == null"
+            >
+              <mat-icon>clear</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <a
+    class="add-category-btn"
+    *ngIf="retryLeft > 0"
+    (click)="checkTranslation()"
+  >
+    Check Translation
+  </a>
+  <a
+    class="add-category-btn see-translation-btn"
+    *ngIf="retryLeft == 0"
+    (click)="seeTranslation()"
+  >
+    See Translation
+  </a>
+</div>

@@ -1,0 +1,17 @@
+.initial-loading {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fc6736;
+}
+
+.app-main-title {
+  color: white;
+  font-size: 105px;
+  font-family: "Poor Story", system-ui;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}

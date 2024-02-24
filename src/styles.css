@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Poor+Story&display=swap");
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.app-title {
+  font-family: "Poor Story", system-ui;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.page-route-title {
+  font-family: "Poor Story", system-ui !important;
+  font-size: 37px !important;
+  font-weight: 700 !important;
+  color: #0c2d57;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+
+.snackbar-red > .mdc-snackbar__surface {
+  background-color: red !important;
+}
+
+.snackbar-green > .mdc-snackbar__surface {
+  background-color: green !important;
+}
+
+button.swal2-confirm.swal2-styled {
+  background: #0c2d57;
+}

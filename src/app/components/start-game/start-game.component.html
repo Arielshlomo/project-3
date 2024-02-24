@@ -1,0 +1,26 @@
+<h1 class="page-route-title">Let's Play Game</h1>
+<div class="start-game-component-container">
+  <p class="start-game-instruction">
+    Please select a category to start the game
+  </p>
+  <div class="categories-container">
+    <div
+      class="card"
+      [ngClass]="{
+        'card-selected': selectedCategoryId == category.numericIdentifier
+      }"
+      *ngFor="let category of categoriesData"
+      [style.backgroundImage]="'url(' + category.categoryImage + ')'"
+      (click)="selectCategory(category.numericIdentifier)"
+    >
+      <div class="card_content">
+        <div class="card_title">{{ category.categoryName }}</div>
+        <div class="card_desc">
+          Number of words available : {{ category.words.length }}
+        </div>
+      </div>
+      <div class="card_bottom_shadow"></div>
+    </div>
+  </div>
+  <a class="add-category-btn" [ngClass]="{'btn-disabled' : selectedCategoryId == -1}" (click)="startGame()"> Start Game </a>
+</div>

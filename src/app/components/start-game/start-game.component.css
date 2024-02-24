@@ -1,0 +1,132 @@
+.start-game-component-container {
+  width: 70vw;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.start-game-instruction {
+  font-size: 35px;
+  text-align: center;
+  font-family: "Poor Story", system-ui;
+  font-weight: 900;
+  margin-bottom: 50px;
+  color: #fc6736;
+}
+
+.categories-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  max-height: 228px;
+  overflow: auto;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.add-category-btn {
+  background-color: #0c2d57;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 27px;
+  padding: 14px 20px;
+  font-family: "Poor Story", system-ui;
+  font-weight: 700;
+  outline: none;
+  border: none;
+  transition-duration: 0.5s;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.add-category-btn:hover, .btn-disabled {
+  background-color: #efecec;
+  color: grey;
+  transition-duration: 0.5s;
+}
+
+.card {
+  height: 200px;
+  width: 300px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.4s;
+  background-size: cover;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.card:hover .card_content,
+.card:hover .card_bottom_shadow {
+  bottom: 0;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card_content {
+  z-index: 2;
+  color: #fff;
+  font-family: "Poor Story", system-ui;
+  padding: 0px 20px 25px;
+  position: absolute;
+  bottom: -150px;
+  left: 0;
+  transition: all 0.25s;
+}
+
+.card_title {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.card_desc {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.card_bottom_shadow {
+  height: 150px;
+  width: 100%;
+  position: absolute;
+  bottom: -150px;
+  left: 0;
+  transition: all 0.1s;
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgba(252, 103, 54, 0.61),
+    #fc6736
+  );
+}
+
+.card-selected {
+  transform: scale(1.1) !important;
+}
+
+.card-selected .card_content,
+.card-selected .card_bottom_shadow {
+  bottom: 0;
+}
+
+.categories-container::-webkit-scrollbar {
+  width: 0.7em;
+}
+
+.categories-container::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.categories-container::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+}

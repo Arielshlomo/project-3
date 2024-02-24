@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>Delete Category</h2>
+<mat-dialog-content> Do you want to delete the category ? </mat-dialog-content>
+<mat-dialog-actions class="dialog-btn-container">
+  <button mat-dialog-close class="dialog-cancel-btn dialog-proceed-btn">
+    Cancel
+  </button>
+  <button [mat-dialog-close]="true" cdkFocusInitial class="dialog-proceed-btn">
+    Proceed
+  </button>
+</mat-dialog-actions>

@@ -1,0 +1,99 @@
+.category-form {
+  width: 70vw;
+  max-width: 700px;
+  margin: auto;
+  margin-top: 15vh;
+  /* border: 1px solid; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.word-form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: wrap;
+}
+
+.form-field {
+  width: 48%;
+  height: 80px;
+}
+
+.word-field {
+  width: 43%;
+  height: 80px;
+}
+
+.scroll-container {
+  overflow: auto;
+  max-height: 270px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.add-word-btn {
+  background-color: #fc6736;
+  color: white;
+  border-radius: 20px;
+  font-size: 16px;
+  min-height: 40px;
+  padding: 14px 20px;
+  outline: none;
+  border: none;
+}
+
+.save-category-btn {
+  position: fixed;
+  bottom: 70px;
+  right: 50px;
+  background-color: #fc6736;
+  color: white;
+  border-radius: 20px;
+  font-size: 16px;
+  min-height: 40px;
+  padding: 14px 20px;
+  outline: none;
+  border: none;
+  transition-duration: 0.5s;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.save-category-btn:hover,
+.save-disabled {
+  background-color: #efecec;
+  color: grey;
+  transition-duration: 0.5s;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #efecec;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+
+input#categoryName,
+input#categoryImage {
+  background-color: transparent !important;
+  background: transparent;
+}
+
+.mat-delete-btn {
+  background-color: #fc6736;
+  color: #efecec;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  margin-top: 7px;
+}

@@ -1,0 +1,88 @@
+<h1 class="page-route-title">
+  <span routerLink="/category"><mat-icon>arrow_back</mat-icon></span>
+  Category
+</h1>
+<form [formGroup]="categoryForm" class="category-form">
+  <mat-form-field class="form-field">
+    <mat-label>Category Name</mat-label>
+    <input
+      matInput
+      type="text"
+      id="categoryName"
+      formControlName="categoryName"
+    />
+    <mat-error *ngIf="categoryName.invalid">
+      Category Name is required
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="form-field">
+    <mat-label>Category Image URL</mat-label>
+    <input
+      matInput
+      type="text"
+      id="categoryImage"
+      formControlName="categoryImage"
+    />
+  </mat-form-field>
+  <br />
+  <mat-form-field class="form-field">
+    <mat-label>Source Language</mat-label>
+    <input
+      matInput
+      type="text"
+      id="sourceLanguage"
+      [readonly]="true"
+      formControlName="sourceLanguage"
+    />
+  </mat-form-field>
+  <mat-form-field class="form-field">
+    <mat-label>Target Language</mat-label>
+    <input
+      matInput
+      type="text"
+      id="targetLanguage"
+      [readonly]="true"
+      formControlName="targetLanguage"
+    />
+  </mat-form-field>
+  <br />
+
+  <button class="add-word-btn" (click)="addWord()">+ Add Word</button>
+
+  <div formArrayName="words" class="word-form scroll-container mt-20">
+    <div
+      *ngFor="let wordGroup of words.controls; let i = index"
+      [formGroupName]="i"
+      class="word-form"
+    >
+      <mat-form-field class="word-field">
+        <mat-label>Origin ({{ sourceLanguage.value }})</mat-label>
+        <input matInput type="text" formControlName="sourceLanguage" />
+        <mat-error *ngIf="wordGroup.get('sourceLanguage')?.invalid">
+          Oirgin Translation is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="word-field">
+        <mat-label>Target</mat-label>
+        <input matInput type="text" formControlName="targetLanguage" />
+        <mat-error *ngIf="wordGroup.get('targetLanguage')?.invalid">
+          Target Translation is required
+        </mat-error>
+      </mat-form-field>
+
+      <button (click)="removeWord(i)" class="mat-delete-btn">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+</form>
+
+<button
+  class="save-category-btn"
+  [ngClass]="{ 'save-disabled': categoryForm.invalid }"
+  [disabled]="categoryForm.invalid"
+  (click)="onSubmit()"
+>
+  {{ categoryIdentifier ? "Update Category" : "Save Category" }}
+</button>
